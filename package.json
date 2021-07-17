@@ -1,0 +1,38 @@
+{
+  "name": "teamproject",
+  "version": "1.0.0",
+  "description": "An application that will create a team for projects",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julioPlaceres/TeamProject.git"
+  },
+  "keywords": [
+    "node.js",
+    "html",
+    "css",
+    "bootstrap",
+    "inquirer",
+    "javascript",
+    "jest"
+  ],
+  "author": "Julio Placeres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julioPlaceres/TeamProject/issues"
+  },
+  "homepage": "https://github.com/julioPlaceres/TeamProject#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
