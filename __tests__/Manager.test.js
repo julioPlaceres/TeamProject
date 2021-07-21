@@ -26,6 +26,17 @@ describe("Manager", () =>{
             const eTest = new Manager(123, "Julio", email);
 
             expect(eTest.email).toBe(email);
-        })
-    })
+        });
+        it("Get office number via getOffice() method", () =>{
+            const office = 789
+            const eTest = new Manager(123, "Julio", "myemail@email.com", office);
+
+            expect(eTest.getOffice()).toBe(office);
+        });
+        it("Get Role via getRole() method", () =>{
+            const eTest = new Manager();
+
+            expect(eTest.getRole()).toBe("Manager");
+        });
+    });
 });

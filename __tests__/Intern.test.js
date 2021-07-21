@@ -26,6 +26,17 @@ describe("Engineer", () =>{
             const eTest = new Intern(123, "Julio", email);
 
             expect(eTest.email).toBe(email);
-        })
-    })
+        });
+        it("Get school name via getSchool() method", () =>{
+            const school = "UCF"
+            const eTest = new Intern(123, "Julio", "myemail@email.com", school);
+
+            expect(eTest.getSchool()).toBe(school);
+        });
+        it("Get Role via getRole() method", () =>{
+            const eTest = new Intern();
+
+            expect(eTest.getRole()).toBe("Intern");
+        });
+    });
 });
