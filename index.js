@@ -25,17 +25,20 @@ function selectManager() {
         {
             name: "managerId",
             type: "input",
-            message: "Select an ID for your manager"
+            message: "Select an ID for your manager",
+            validate: async (input) => input == "" ? "Please provide a proper ID" : true
         },
         {
             name: "managerEmail",
             type: "input",
-            message: "Type your manager's email"
+            message: "Type your manager's email",
+            validate: async (input) => input == "" ? "Please provide a proper email" : true
         },
         {
             name: "managerOffice",
             type: "input",
-            message: "What is your manager's office number?"
+            message: "What is your manager's office number?",
+            validate: async (input) => input == "" ? "Please provide a proper number" : true
         }
     ]).then(function (response) {
         // Creation of an instance of the manager's class to be added to the teamArray that will be used to generate the html
