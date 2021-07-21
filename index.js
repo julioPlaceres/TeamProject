@@ -19,7 +19,8 @@ function selectManager() {
         {
             name: "managerName",
             type: "input",
-            message: "What is your manager's name?"
+            message: "What is your manager's name?",
+            validate: async (input) => input == "" ? "Please provide a proper name" : true
         },
         {
             name: "managerId",
@@ -158,11 +159,13 @@ function renderTeam(){
         }
     })
 
-    // Append all cards to the rest of the html content
-    const outputFile = renderHtmlPage(cardBody);
+    // Append all cards to the rest of the html content and css content to separate file
+    const htmlFile = renderHtmlPage(cardBody);
+    const cssFile = renderCssPage();
 
-    // Write to file to create the html file
-    writeToFile("./dist/index.html", outputFile);
+    // Write to file to create the html file, and css
+    writeToFile("./dist/index.html", htmlFile);
+    writeToFile("./dist/style.css", cssFile);
 }
 
 // HTML content for the manager class
@@ -171,7 +174,11 @@ function addManagerContent(manager){
     <div class="card mx-auto" style="width: 300px;">
         <div class="card-body bg-primary text-white">
             <h5 class="card-title">${manager.employeeName}</h5>
-            <h6 class="card-text">Manager</h6>
+            <h6 class="card-text">
+            <span style="font-size: 1em; margin-right:1em;">
+            <i class="fas fa-coffee"></i>
+          </span>
+            Manager</h6>
         </div>
         <ul class="list-group list-group-flush text-start">
             <li class="list-group-item">ID: ${manager.id}</li>
@@ -188,7 +195,11 @@ function addEngineerContent(engineer){
     <div class="card mx-auto" style="width: 300px;">
         <div class="card-body bg-primary text-white">
             <h5 class="card-title">${engineer.employeeName}</h5>
-            <h6 class="card-text">Engineer</h6>
+            <h6 class="card-text">
+            <span style="font-size: 1em; margin-right:1em;">
+            <i class="fas fa-glasses"></i>
+          </span>
+            Engineer</h6>
         </div>
         <ul class="list-group list-group-flush text-start">
             <li class="list-group-item">ID: ${engineer.id}</li>
@@ -205,7 +216,11 @@ function addInternContent(intern){
     <div class="card mx-auto" style="width: 300px;">
         <div class="card-body bg-primary text-white">
             <h5 class="card-title">${intern.employeeName}</h5>
-            <h6 class="card-text">Intern</h6>
+            <h6 class="card-text">
+            <span style="font-size: 1em; margin-right:1em;">
+            <i class="fas fa-user-graduate"></i>
+          </span>
+            Intern</h6>
         </div>
         <ul class="list-group list-group-flush text-start">
             <li class="list-group-item">ID: ${intern.id}</li>
@@ -251,6 +266,21 @@ function renderHtmlPage(body){
 
 </html>`
 }
+
+function renderCssPage(){
+    return `.headerRow{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media only screen and (min-width: 1800px) {
+        .card {
+          width: 500px!important;
+        }
+      }`
+ }
 
 // Will initiate the menu option
 menu();
