@@ -1,0 +1,12 @@
+.headerRow{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media only screen and (min-width: 1800px) {
+        .card {
+          width: 500px!important;
+        }
+      }

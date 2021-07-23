@@ -1,5 +1,9 @@
 # Team Generator  
 A nodejs application to help assemble the needed documentation to create a team. Through a series of questions, using inquirer the user will be able to enter the information being requested, the application once the user enter all desired team members, will generate a html file with the appropiate information.
+[app sample Video](https://drive.google.com/file/d/1sgRauBx5aunzPYJtSWZ0nSHxrV_t0iFA/view?usp=sharing)
+
+![App View](./assets/images/123.PNG)
+
 ## Table of Contents:
 * [Installation](#installation)
 * [Usage](#usage)
